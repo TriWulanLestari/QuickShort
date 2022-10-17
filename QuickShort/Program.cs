@@ -121,7 +121,7 @@ namespace QuickShort
             Console.WriteLine("\nNumber of data movemenets: " + mov_count);
 
         }
-
+         
         int getSize()
         {
             return (n);
