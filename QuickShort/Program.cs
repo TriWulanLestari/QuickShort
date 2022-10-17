@@ -94,7 +94,7 @@ namespace QuickShort
             }
             //j now contains the index of the last element in the sorted list 
 
-            if (low < j)
+            if (low < j) 
             {
                 //Move the pivot to its correct posituon in the list
                 swap(low, j);
