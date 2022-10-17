@@ -35,22 +35,22 @@ namespace QuickShort
             Console.WriteLine("\n==================");
 
             //get array elements
-            for (int i = 0;i < n;i++)
+            for (int i = 0; i < n; i++)
             {
                 Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
                 arr[i] = Int32.Parse(s1);
             }
-          }
+        }
         //swaps the element at index x with the element at index y 
-        
-        void swap (int x, int y)
+
+        void swap(int x, int y)
         {
             int temp;
 
             temp = arr[x];
             arr[x] = arr[y];
-            arr[y] = temp; 
+            arr[y] = temp;
 
         }
         public void q_sort(int low, int high)
@@ -97,7 +97,7 @@ namespace QuickShort
             if (low < j)
             {
                 //Move the pivot to its correct posituon in the list
-                swap (low, j);
+                swap(low, j);
                 mov_count++;
             }
             //short the list on the left of pivot using quick sort
@@ -112,19 +112,35 @@ namespace QuickShort
             Console.WriteLine(" Sorted array elements");
             Console.WriteLine("----------------------");
 
-            for (int j = 0; j< n; j++)
+            for (int j = 0; j < n; j++)
             {
                 Console.WriteLine(arr[j]);
 
             }
             Console.WriteLine("\nNumber of comparisons: " + cmp_count);
             Console.WriteLine("\nNumber of data movemenets: " + mov_count);
-               
+
         }
 
         int getSize()
         {
             return (n);
         }
+        static void Main(string[] args)
+        {
+            //Declaring the object of the class
+            Program myList = new Program();
+            //Accept array elements
+            myList.read();
+            //Calling the sorting function
+            //Frist call to quick sort Alogrithm
+            myList.q_sort(0, myList.getSize() - 1);
+            //Display sorted array
+            myList.display();
+            //to exit from the console
+            Console.WriteLine("\n\nPress Enter to exit. ");
+            Console.Read();
+        }
     }
 }
+
